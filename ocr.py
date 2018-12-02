@@ -6,15 +6,18 @@ lang = "eng"
 
 
 def parsePhoto(photo="example_01.png", lang="rus"):
-    f = open('text_photo.txt', 'w')
-    text = pytesseract.image_to_string(Image.open(str(photo)), lang=lang)
-    f.write(str(text.encode('utf-8')))
-    print("\n%s" % str(text.encode('utf-8')))
+    try:
+        f = open('text_photo.txt', 'w')
+        text = pytesseract.image_to_string(Image.open(str(photo)), lang=lang)
+        f.write(str(text.encode('utf-8')))
+        print("\n%s" % str(text.encode('utf-8')))
+    except IOError:
+        print "\nError: can\'t find file or read data"
 
 
 while True:
     lang = raw_input("\nWrite parsing language eng or rus: ")
-    if lang.strip() == 'eng' or lang.strip() == 'rus':
+    if lang.strip() == 'eng' or 'ENG' or lang.strip() == 'rus' or 'RUS':
         break
 
 while True:
