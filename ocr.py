@@ -1,7 +1,9 @@
 from PIL import Image
 import pytesseract
+import substring
 
-formatImage = ['.png', '.jpg']
+formatOfImage = ['.png', '.jpg']
+languages = ['eng', 'rus']
 
 photo = "images/example_01.png"
 lang = "eng"
@@ -19,12 +21,15 @@ def parsePhoto(photo="example_01.png", lang="rus"):
 
 while True:
     lang = raw_input("\nWrite parsing language eng or rus: ")
-    if lang.strip() == 'eng' or lang.strip() == 'rus':
+    if lang.strip() in languages:
         break
+    else:
+        print "Unknown language."
 
 while True:
-    photo = raw_input("Enter path to photo (e.g. images/example_01.png): ")
-    if photo[-4:] in formatImage:
+    path = raw_input("Enter path to photo (e.g. images/example_01.png): ")
+    typeOfImage = substring.substringByChar(photo, startChar=".")
+    if typeOfImage in formatOfImage:
         break
     else:
         print "Unknown format."
