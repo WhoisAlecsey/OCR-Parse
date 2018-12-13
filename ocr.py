@@ -28,10 +28,10 @@ while True:
 
 while True:
     path = raw_input("Enter path to photo (e.g. images/example_01.png): ")
-    typeOfImage = substring.substringByChar(photo, startChar=".")
+    typeOfImage = substring.substringByChar(path, startChar=".")
     if typeOfImage in formatOfImage:
         break
     else:
         print "Unknown format."
 
-parsePhoto(photo, lang)
+parsePhoto(path, lang)
