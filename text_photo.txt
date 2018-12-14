@@ -1,9 +1,14 @@
-Всё ломается: чувства. люди.
-угюг. Особенно утюг меня
-расстроил. Вот уж от него
+Caveats
 
-не ожидапі
+8 x 8 blocks are too small
 
-   
+"Limited” to 12 bit samples
 
-Атта сот
+Bad quality for high compression rations
+Arithmetic coding not used due to patents
+HVS optimization barely used
+
+In general, most devices/apps do not allow
+users to specify all JPEG parameters
+
+Awful results if wrongly used (text, diagrams)
